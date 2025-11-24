@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Atividade avaliativa III</title>
+
+</head>
+
+
+
+<body>
+
+  <!-- Entrada de dados -->
+
+  <label for="nome">Nome do Aluno: </label>
+
+  <input id="nome" type="text">
+
+
+
+  <label for="nota1">Nota 1: </label>
+
+  <input id="nota1" type="number" step="0.1">
+
+
+
+  <label for="nota2">Nota 2: </label>
+
+  <input id="nota2" type="number" step="0.1">
+
+
+
+  <label for="nota3">Nota 3: </label>
+
+  <input id="nota3" type="number" step="0.1">
+
+
+
+  <button onclick="calcularMedia()">Calcular Média</button>
+
+
+
+  <div id="resultado"></div>
+
+
+
+  <script>
+
+
+
+    // Função responsável por calcular a média e mostrar a situação do aluno
+
+    function calcularMedia() {
+
+      const nome = document.getElementById('nome').value;
+
+      const nota1 = document.getElementById('nota1').value;
+
+      const nota2 = document.getElementById('nota2').value;
+
+      const nota3 = document.getElementById('nota3').value;
+
+      const resultadoDIV = document.getElementById('resultado');
+
+
+
+
+
+      // Validação dos campos
+
+      if (nome === '') {
+
+        resultadoDIV.innerText = 'ERRO: Digite o nome do aluno.';
+
+        return;
+
+      }
+
+
+
+      if (nota1 === '' || nota2 === '' || nota3 === '') {
+
+        resultadoDIV.innerText = 'ERRO: Preencha as três notas.';
+
+        return;
+
+      }
+
+
+
+      // Convertendo textos para números e calculando a média
+
+      const n1 = Number(nota1);
+
+      const n2 = Number(nota2);
+
+      const n3 = Number(nota3);
+
+
+
+      const media = (n1 + n2 + n3) / 3;
+
+
+
+      // Verificando a situação do aluno de acordo com a média
+
+      let situacao;
+
+
+
+      if (media < 4) {
+
+        situacao = "REPROVADO";
+
+      } else if (media < 6) {
+
+        situacao = "RECUPERAÇÃO";
+
+      } else {
+
+        situacao = "APROVADO";
+
+      }
+
+      // Resultado final na tela
+
+      resultadoDIV.innerText = "Aluno: " + nome + "\nMédia: " + media.toFixed(1) + "\nSituação: " + situacao;
+
+    }
+
+  </script>
+
+</body>
+
+
+
+</html>
