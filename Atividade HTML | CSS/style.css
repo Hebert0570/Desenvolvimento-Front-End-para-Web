@@ -1,0 +1,365 @@
+/* Definição de Variáveis CSS Globais (Desafio Extra 3) */
+:root {
+    /* Cores da Marca */
+    --cor-primaria: #13273F;
+    --cor-destaque: #FF7A00;
+    --cor-fundo-claro: #f4f6f8;
+    --cor-fundo-secundaria: #e9eef5;
+    --cor-texto-escuro: #222;
+
+    /* Tipografia */
+    --fonte-principal: 'Poppins', sans-serif;
+}
+
+
+/* ======= BÁSICO ======= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--fonte-principal);
+}
+
+body {
+    background-color: var(--cor-fundo-claro);
+    color: var(--cor-texto-escuro);
+    margin: 0;
+    padding: 0;
+}
+
+/* ======= CABEÇALHO ======= */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+    background-color: var(--cor-primaria);
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    height: 80px;
+}
+
+
+.logo img {
+    height: 50px;
+    width: auto;
+    display: block;
+}
+
+.main-nav ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 25px;
+
+}
+
+.main-nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.main-nav a:hover {
+    color: var(--cor-destaque);
+}
+
+.procura-box {
+    display: flex;
+    gap: 10px;
+}
+
+.procura-box input {
+    padding: 6px 10px;
+    border-radius: 5px;
+    border: none;
+}
+
+.procura-box button {
+    background-color: var(--cor-destaque);
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.procura-box button:hover {
+    background-color: #e96d00;
+}
+
+/* ======= BANNER ======= */
+.banner {
+    padding-top: 100px;
+    background: url('Imagens/banner-sem-texto.png') center/cover no-repeat;
+    color: white;
+    text-align: center;
+    padding: 180px 20px 100px;
+}
+
+.banner-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.banner-content p {
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+}
+
+.cta-banner-button {
+    background-color: var(--cor-destaque);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.cta-banner-button:hover {
+    background-color: #e96d00;
+}
+
+/* ======= PRODUTOS ======= */
+.p-produtos {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.p-produtos h2 {
+    color: var(--cor-primaria);
+    margin-bottom: 40px;
+    font-size: 1.8rem;
+}
+
+.produtos_grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    padding: 0 20px;
+}
+
+.produtos-card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.produtos-card:hover {
+    transform: scale(1.03);
+    /* Desafio Extra 2: Efeito de transição nos cards */
+}
+
+.produtos-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.produtos-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.produtos-card p {
+    color: var(--cor-destaque);
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.produtos-card button {
+    background-color: var(--cor-primaria);
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.produtos-card button:hover {
+    background-color: #1c3a5f;
+}
+
+/* ======= SOBRE ======= */
+.s-sobre {
+    padding: 60px 20px;
+    background-color: var(--cor-fundo-secundaria);
+}
+
+.s-sobre h2 {
+    text-align: center;
+    color: var(--cor-primaria);
+    margin-bottom: 30px;
+}
+
+.sobre-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    text-align: center;
+}
+
+.sobre-content img {
+    width: 90%;
+    max-width: 500px;
+    border-radius: 10px;
+}
+
+/* ======= AVALIAÇÕES ======= */
+.avaliacoes {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.avaliacoes h2 {
+    color: var(--cor-primaria);
+    margin-bottom: 40px;
+    font-size: 1.8rem;
+}
+
+.avaliacoes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.review-card {
+    background-color: white;
+    border: 1px solid var(--cor-fundo-secundaria);
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    text-align: left;
+}
+
+.review-card h3 {
+    color: var(--cor-primaria);
+    margin-bottom: 5px;
+}
+
+.review-card .estrelas {
+    color: var(--cor-destaque);
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.review-card small {
+    display: block;
+    margin-top: 10px;
+    font-style: italic;
+    color: #666;
+}
+
+/* ======= CONTATO ======= */
+.contato-content {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.contato-content h2 {
+    color: var(--cor-primaria);
+    margin-bottom: 25px;
+}
+
+.contato-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.contato-form input,
+.contato-form textarea {
+    width: 100%;
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.contato-form button {
+    background-color: var(--cor-destaque);
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.contato-form button:hover {
+    background-color: #e96d00;
+}
+
+/* ======= RODAPÉ ======= */
+footer {
+    background-color: var(--cor-primaria);
+    color: white;
+    text-align: center;
+    padding: 25px 10px;
+    margin-top: 50px;
+}
+
+.footer-social {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 15px;
+}
+
+.footer-social img {
+    width: 25px;
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.social-link:hover {
+    color: var(--cor-destaque);
+}
+
+.copyright {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* ======= RESPONSIVIDADE ======= */
+@media (max-width: 768px) {
+    .main-header {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+        height: auto;
+    }
+
+    .sobre-content {
+        flex-direction: column;
+    }
+
+    .banner {
+        padding-top: 180px;
+    }
+}
